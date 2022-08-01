@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+      <% if @info %>
+        <%="#{@info["name"]}, #{@info["sys"]["country"]}" %>
+      <% else %>
+        weather
+      <% end %>
+    </title>
+    <meta name="description" content="a weather app">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <form class="my-form" method="get" action="/info" >
+        <div class="form-group">
+          <label>enter a location: </label>
+          <input type="text" name="location">
+        </div>
+        <input class="button" type="submit" value="Submit" name="">
+      </form>
+      <%= yield_content :info %>
+    </div>
+  </body>
+</html>

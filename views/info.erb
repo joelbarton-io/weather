@@ -1,0 +1,13 @@
+<% content_for :info do %>
+  <div class="categories">
+    <div class="top">
+      <p><%=Time.new.getlocal(@info["timezone"]).strftime("%A, %B, %d")%></p>
+      <p><img src="http://openweathermap.org/img/wn/<%=@info["weather"].first["icon"]%>@2x.png"></p>
+      <p><%=@info["main"]["temp"]%> °F</p>
+      <p><%=@info["weather"].first["main"]%></p>
+      <p><%=@info["weather"].first["description"]%></p>
+      <p><%="local time: #{Time.new.getlocal(@info["timezone"]).strftime("%I:%M %p")}"%></p>
+      <p><%="#{@info["name"]}, #{@info["sys"]["country"]}"%></p>
+    </div>
+  </div>
+<% end %>
