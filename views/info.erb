@@ -8,7 +8,6 @@
       <p><%=@info["weather"].first["description"]%></p>
       <p><%=Time.new.getlocal(@info["timezone"]).strftime("%I:%M %p")%></p>
       <p><%="#{@info["name"]}, #{@info["sys"]["country"]}"%></p>
-      <button class="button"><a href="/search">search again</a></button>
     </div>
   </div>
 <% end %>

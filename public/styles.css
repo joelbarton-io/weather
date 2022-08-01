@@ -2,7 +2,7 @@ body {
   background-color: #EAE3E3;
   color: rgb(0, 0, 0);
 
-  font-family: Consola sans-serif;
+  font-family: Consola monospace;
   font-size: 25px;
   font-weight: normal;
   line-height: 1.4em;
@@ -10,33 +10,32 @@ body {
 }
 
 a{
-  text-decoration: none;
-  color:#000;
+  text-decoration:;
+  color:rgb(255, 255, 255);
 }
 
 a:hover{
-  color:rgb(93, 88, 185);
+  color:#20366B;
 }
 
 a:active{
-  color:rgb(237, 58, 14);
+  color:rgb(255, 249, 69);
 }
 
 .container{
   width: 80%;
-  margin: auto;
+  margin:auto;
 }
 
-
-.button1{
+.button{
   background-color: #2D095C;
   font-family: Consola monospace;
   font-size: 25px;
   font-weight: normal;
   color: #EAE3E3;
   display:block;
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  width: 130px;
   border-radius: 50%;
   padding: 10px 15px;
   border:none;
