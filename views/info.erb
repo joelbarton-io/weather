@@ -1,13 +1,20 @@
 <% content_for :info do %>
   <div class="categories">
-    <div class="top">
-      <p><%=Time.new.getlocal(@info["timezone"]).strftime("%A, %B, %d")%></p>
-      <p><img src="http://openweathermap.org/img/wn/<%=@info["weather"].first["icon"]%>@2x.png"></p>
-      <p><%=@info["main"]["temp"]%> °F</p>
-      <p><%=@info["weather"].first["main"]%></p>
-      <p><%=@info["weather"].first["description"]%></p>
-      <p><%=Time.new.getlocal(@info["timezone"]).strftime("%I:%M %p")%></p>
-      <p><%="#{@info["name"]}, #{@info["sys"]["country"]}"%></p>
-    </div>
+    <p>
+      <div class="date_header"><%="#{@info["name"]}, #{@info["sys"]["country"]}"%></div>
+    </p>
+    <p>
+      <div class="date_header"><%="#{@time.getlocal(@info["timezone"]).strftime("%A, %B %d")}"%></div>
+    </p>
+    <p><img src="http://openweathermap.org/img/wn/<%=@info["weather"].first["icon"]%>@2x.png"></p>
+    <p><%=@info["main"]["temp"]%> °F</p>
+    <p><%=@info["weather"].first["main"]%></p>
+    <p><%=@info["weather"].first["description"]%></p>
+    <p><%= "#{@info["main"]["humidity"]}% humidity" %></p>
+    <p><%=@time.getlocal(@info["timezone"]).strftime("%I:%M %p")%></p>
+    <p><%="feels like: #{@info["main"]["feels_like"]}"%></p>
+    <form method="get" action="/search" >
+      <input class="button" type="submit" value="back" name="">
+    </form>
   </div>
 <% end %>

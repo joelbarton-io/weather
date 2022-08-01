@@ -1,9 +1,15 @@
 <% content_for :search do %>
-  <form class="my-form" method="get" action="/info" >
-    <div class="form-group">
-      <label>enter a location: </label>
-      <input type="text" name="location">
-    </div>
-    <input class="button" type="submit" value="search" name="">
-  </form>
+  <div class="categories">
+    <form class="my-form" method="get" action="/info" >
+      <div class="form-group">
+        <p>
+          <div class="date_header">
+            search by location (ex: "Stockholm")
+          </div>
+        </p>
+        <input type="text" name="location">
+      </div>
+      <input class="button" type="submit" value="search" name="">
+    </form>
+  </div>
 <% end %>

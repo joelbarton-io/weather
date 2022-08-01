@@ -6,7 +6,7 @@ body {
   font-size: 25px;
   font-weight: normal;
   line-height: 1.4em;
-  margin:0;
+  margin:5%;
 }
 
 a{
@@ -39,6 +39,14 @@ a:active{
   border-radius: 50%;
   padding: 10px 15px;
   border:none;
+}
+
+.button .vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .button:hover{
@@ -75,13 +83,15 @@ a:active{
 } */
 
 .categories{
+  text-align: center;
   padding: 10px;
   border-radius: 50%;
 }
 
-.categories .top{
-  text-align: center;
+.categories .date_header{
+  font-size: 40px;
 }
+
 
 .my-form{
   padding:20px;
@@ -100,12 +110,12 @@ a:active{
   width: 100%;
 }
 
-.block{
+/* .block{
   float:left;
   width:33.3%;
   border:1px solid #ccc;
   box-sizing: border-box;
-}
+} */
 
 #main-block{
   float:left;

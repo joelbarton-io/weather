@@ -40,6 +40,7 @@ end
 get '/info' do
   location = params[:location]
   @info = fetch_current_weather(location)
+  @time = Time.new
   erb :info, layout: :layout
 end
 
