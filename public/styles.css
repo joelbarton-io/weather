@@ -1,12 +1,11 @@
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: #EAE3E3;
   color: rgb(0, 0, 0);
 
-  font-family: Jetbrains monospace;
-  font-size: 30px;
+  font-family: Consola sans-serif;
+  font-size: 25px;
   font-weight: normal;
-
-  line-height: 1.7em;
+  line-height: 1.4em;
   margin:0;
 }
 
@@ -24,20 +23,27 @@ a:active{
 }
 
 .container{
-  width: 73%;
+  width: 80%;
   margin: auto;
 }
 
 
-.button{
-  background-color: #333;
-  color: white;
+.button1{
+  background-color: #2D095C;
+  font-family: Consola monospace;
+  font-size: 25px;
+  font-weight: normal;
+  color: #EAE3E3;
+  display:block;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
   padding: 10px 15px;
   border:none;
 }
 
 .button:hover{
-  background:red;
+  background:#DD7777;
   color:white;
 }
 
@@ -52,7 +58,7 @@ a:active{
   margin: 20px 0px;
 }
 
-.box-1 h1{
+/* .box-1 h1{
   font-family: Tahoma;
   font-weight: lighter;
   font-style: italic;
@@ -67,12 +73,11 @@ a:active{
   padding: 20px;
   margin: 20px 0px;
 
-}
+} */
 
 .categories{
-  /* border: 1px rgb(84, 115, 132) solid; */
   padding: 10px;
-  border-radius: 300px;
+  border-radius: 50%;
 }
 
 .categories .top{
@@ -84,7 +89,7 @@ a:active{
 }
 
 .my-form .form-group{
-  padding-bottom:18px;
+  padding-bottom:30px;
 }
 
 .my-form label{
