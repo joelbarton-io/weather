@@ -14,6 +14,7 @@
     <p><%= "#{@info["main"]["humidity"]}% humidity; #{@info["clouds"]["all"]}% cloud coverage"%></p>
     <p><%= "visibility is #{@info["visibility"].to_f/1000.00} km"%></p>
     <p><%="#{Time.at(@info["sys"]["sunset"]).strftime("%I:%M %p")} ⬇ 🌞 ⬆ #{Time.at(@info["sys"]["sunrise"]).strftime("%I:%M %p")}"%></p>
+    <p><%=@info%></p>
     <form method="get" action="/search" >
       <input class="button" type="submit" value="back" name="">
     </form>
