@@ -11,13 +11,14 @@ require 'geocoder'
 configure(:development) do
   require 'sinatra/reloader'
   also_reload('lib/*.rb')
-  enable :sessions
   # set :session_secret, ENV['SESSION_SECRET']
 end
 
-COMPASS_ROWS = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'NWN', 'NW', 'NNW']
+configure(:production) do
+  enable :sessions
+end
 
-DIV = 0.0625
+COMPASS_ROWS = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'NWN', 'NW', 'NNW']
 
 helpers do
   def fetch_coordinates(location)
