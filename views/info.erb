@@ -6,12 +6,12 @@
     <p><%="local time in #{@info["name"]}: #{@time.getlocal(@info["timezone"]).strftime("%I:%M %p")}"%></p>
     <p><img src="http://openweathermap.org/img/wn/<%=@info["weather"].first["icon"]%>@2x.png"></p>
     <p>
-      <div class="date_header"><b><%="feels: #{@info["main"]["feels_like"]} °F" %></b></div>
+      <div class="date_header"><b><%="#{@info["main"]["feels_like"]} °F" %></b></div>
     </p>
-    <p><%="#{@info["weather"].first["main"]} #{@info["main"]["temp"]} °F"%></p>
-    <p><%="#{@info["weather"].first["description"]}; #{@info["clouds"]["all"]}% cloud coverage"%></p>
-    <p><%= "#{@info["main"]["humidity"]}% humidity"%></p>
+    <p><%="#{@info["weather"].first["main"]}"%></p>
+    <p><%="#{@info["weather"].first["description"]}"%></p>
     <p><%= "wind: #{@info["wind"]["speed"]} mph #{wind_direction(@info["wind"]["deg"].to_f)} 💨" %></p>
+    <p><%= "#{@info["main"]["humidity"]}% humidity; #{@info["clouds"]["all"]}% cloud coverage"%></p>
     <p><%="#{Time.at(@info["sys"]["sunset"]).strftime("%I:%M %p")} ⬇ 🌞 ⬆ #{Time.at(@info["sys"]["sunrise"]).strftime("%I:%M %p")}"%></p>
     <form method="get" action="/search" >
       <input class="button" type="submit" value="back" name="">

@@ -1,5 +1,11 @@
 <% content_for :search do %>
   <div class="categories">
+    <% if session[:input_error] %>
+      <%= session.delete(:input_error) %>
+    <% end %>
+    <% if session[:oops] %>
+      <%= session.delete(:oops) %>
+    <% end %>
     <form class="my-form" method="get" action="/info" >
       <div class="form-group">
         <p>

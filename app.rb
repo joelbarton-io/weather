@@ -51,6 +51,11 @@ end
 
 get '/info' do
   location = params[:location]
+  if location.empty?
+    session[:input_error] = "you have to enter a location!"
+    redirect to('/search')
+  end
+
   @info = fetch_current_weather(location)
   @time = Time.new
   erb :info, layout: :layout

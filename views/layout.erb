@@ -16,9 +16,6 @@
   <body>
     <div class="container">
       <h1 style="text-align: center">⚡️</h1>
-      <% if session.has_key?(:oops) %>
-        <%= session.delete(:oops) %>
-      <% end %>
       <%= yield_content :search %>
       <%= yield_content :info %>
     </div>
