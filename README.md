@@ -1,6 +1,6 @@
 ## a simple weather webapp
 
->> purpose: practice html/css, use `Net::Http` to request info a weather api, interact with an api
+>> purpose: practice html/css, use `Net::Http` to fetch info from a weather api, general sinatra practice
 
 
 - useful coordinate gem: [geocoder](https://github.com/alexreisner/geocoder) from: alexreisner
