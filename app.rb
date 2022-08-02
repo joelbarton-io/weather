@@ -52,7 +52,7 @@ end
 get '/info' do
   location = params[:location]
   if location.empty?
-    session[:input_error] = "you have to enter a location!"
+    session[:input_error] = "you have to enter a location to search!"
     redirect to('/search')
   end
 
