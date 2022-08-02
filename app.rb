@@ -15,6 +15,10 @@ configure(:development) do
   # set :session_secret, ENV['SESSION_SECRET']
 end
 
+COMPASS_ROWS = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'NWN', 'NW', 'NNW']
+
+DIV = 0.0625
+
 helpers do
   def fetch_coordinates(location)
     coors = Geocoder.search(location).first.coordinates
@@ -26,7 +30,15 @@ helpers do
     JSON.parse Net::HTTP.get(uri).gsub('=>', ':')
   end
 
-  # def
+  def wind_direction(degrees)
+    count = 0
+    while degrees > 22.5
+      degrees -= 22.5
+      count += 1
+    end
+
+    COMPASS_ROWS[count]
+  end
 end
 
 get '/' do

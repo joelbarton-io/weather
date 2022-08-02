@@ -1,18 +1,18 @@
 <% content_for :info do %>
   <div class="categories">
     <p>
-      <div class="date_header"><%="#{@info["name"]}, #{@info["sys"]["country"]}"%></div>
-    </p>
-    <p>
       <div class="date_header"><%="#{@time.getlocal(@info["timezone"]).strftime("%A, %B %d")}"%></div>
     </p>
+    <p><%="local time in #{@info["name"]}: #{@time.getlocal(@info["timezone"]).strftime("%I:%M %p")}"%></p>
     <p><img src="http://openweathermap.org/img/wn/<%=@info["weather"].first["icon"]%>@2x.png"></p>
-    <p><%=@info["main"]["temp"]%> °F</p>
-    <p><%=@info["weather"].first["main"]%></p>
-    <p><%=@info["weather"].first["description"]%></p>
-    <p><%= "#{@info["main"]["humidity"]}% humidity" %></p>
-    <p><%=@time.getlocal(@info["timezone"]).strftime("%I:%M %p")%></p>
-    <p><%="feels like: #{@info["main"]["feels_like"]}"%></p>
+    <p>
+      <div class="date_header"><b><%=@info["main"]["temp"]%> °F</b></div>
+    </p>
+    <p><%="#{@info["weather"].first["main"]} "%></p>
+    <p><%="#{@info["weather"].first["description"]}, #{@info["clouds"]["all"]}% coverage"%></p>
+    <p><%= "#{@info["main"]["humidity"]}% humidity, feels like: #{@info["main"]["feels_like"]} °F" %></p>
+    <p><%= "wind: #{@info["wind"]["speed"]} mph #{wind_direction(@info["wind"]["deg"].to_f)} 💨" %></p>
+    <p><%="#{Time.at(@info["sys"]["sunset"]).strftime("%I:%M %p")} ⬇ 🌞 ⬆ #{Time.at(@info["sys"]["sunrise"]).strftime("%I:%M %p")}"%></p>
     <form method="get" action="/search" >
       <input class="button" type="submit" value="back" name="">
     </form>
