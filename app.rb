@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require "sinatra/content_for"
+require 'sinatra/content_for'
 require 'tilt/erubis'
 # require 'dotenv/load'
-require 'erubis'
 require 'net/http'
 require 'geocoder'
 
